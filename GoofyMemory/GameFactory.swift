@@ -10,7 +10,7 @@ import Foundation
 class GameFactory {
 
     static func createMemoryGame() -> GoofyMemoryGame {
-        GoofyMemoryGame()
+        GoofyMemoryGame(theme: ThemeFactory.randomBuild())
     }
 
 }

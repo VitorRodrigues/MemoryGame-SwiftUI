@@ -20,13 +20,13 @@ struct ContentView: View {
             .padding(4)
         }
         .padding()
-        .foregroundColor(.orange)
+        .foregroundColor(.init(viewModel.theme.cardColor))
         .font(.largeTitle)
     }
 }
 
 struct CardView: View {
-    var card: MemoryGame.Card
+    var card: StringMemoryGame.Card
 
     var body: some View {
         ZStack {

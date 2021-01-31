@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A96C2DAD25C72E9B006AF042 /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C2DAC25C72E9B006AF042 /* Array+Only.swift */; };
+		A96C2DB025C7331B006AF042 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C2DAF25C7331B006AF042 /* Theme.swift */; };
 		A97A2E21259CF6EF00AA6DD6 /* GoofyMemoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97A2E20259CF6EF00AA6DD6 /* GoofyMemoryApp.swift */; };
 		A97A2E23259CF6EF00AA6DD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97A2E22259CF6EF00AA6DD6 /* ContentView.swift */; };
 		A97A2E25259CF6F000AA6DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A97A2E24259CF6F000AA6DD6 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		A96C2DAC25C72E9B006AF042 /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
+		A96C2DAF25C7331B006AF042 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A97A2E1D259CF6EE00AA6DD6 /* GoofyMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoofyMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97A2E20259CF6EF00AA6DD6 /* GoofyMemoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoofyMemoryApp.swift; sourceTree = "<group>"; };
 		A97A2E22259CF6EF00AA6DD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				A97A2E26259CF6F000AA6DD6 /* Preview Content */,
 				A98102B625A3367D00943FB4 /* Array+Identifiable.swift */,
 				A96C2DAC25C72E9B006AF042 /* Array+Only.swift */,
+				A96C2DAF25C7331B006AF042 /* Theme.swift */,
 			);
 			path = GoofyMemory;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				A9F6E70C259D1C5800415017 /* GoofyMemoryGame.swift in Sources */,
 				A97A2E21259CF6EF00AA6DD6 /* GoofyMemoryApp.swift in Sources */,
 				A98102B725A3367D00943FB4 /* Array+Identifiable.swift in Sources */,
+				A96C2DB025C7331B006AF042 /* Theme.swift in Sources */,
 				A9F6E70F259D1EBF00415017 /* Grid.swift in Sources */,
 				A9F6E706259D090B00415017 /* GridLayout.swift in Sources */,
 			);

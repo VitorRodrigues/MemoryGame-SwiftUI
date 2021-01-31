@@ -5,24 +5,28 @@
 //  Created by Vítor Nascimento on 30/12/2020.
 //
 
-import Foundation
+import UIKit
 
-class GoofyMemoryGame: ObservableObject{
-    
-    @Published var model: MemoryGame = GoofyMemoryGame.createMemoryGame()
+typealias StringMemoryGame = MemoryGame<String>
 
-    private static func createMemoryGame() -> MemoryGame {
-        let content = ["A", "B", "C"]
-        return MemoryGame(pairCount: content.count) { (index) -> String in
+class GoofyMemoryGame: ObservableObject {
+
+    var theme: Theme
+    @Published var model: StringMemoryGame
+
+    init(theme: Theme) {
+        self.theme = theme
+        let content = theme.content
+        model = MemoryGame(pairCount: content.count) { (index) -> String in
             return content[index]
         }
     }
 
-    var cards: [MemoryGame.Card] {
+    var cards: [StringMemoryGame.Card] {
         model.cards
     }
 
-    func choose(card: MemoryGame.Card) {
+    func choose(card: StringMemoryGame.Card) {
         model.choose(card: card)
     }
 }

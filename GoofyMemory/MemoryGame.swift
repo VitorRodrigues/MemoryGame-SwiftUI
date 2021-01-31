@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-struct MemoryGame {
+struct MemoryGame<CardContent> where CardContent: Equatable {
 
     var cards: [Card]
 
@@ -23,7 +23,7 @@ struct MemoryGame {
         }
     }
 
-    init(pairCount: Int, content: (Int) -> String) {
+    init(pairCount: Int, content: (Int) -> CardContent) {
         cards = (0..<pairCount).flatMap { index in
             [Card(content: content(index), id: index*2),
             Card(content: content(index), id: index*2+1)]
@@ -51,7 +51,7 @@ extension MemoryGame {
     struct Card: Identifiable {
         var isFaceUp = false
         var isMatched = false
-        var content: String
+        var content: CardContent
         var id: Int
     }
 }
