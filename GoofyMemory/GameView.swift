@@ -15,6 +15,11 @@ struct GameView: View {
     var body: some View {
         VStack {
             Text(viewModel.theme.name)
+            HStack {
+                Spacer()
+                Text("\(viewModel.score)")
+                    .padding(.horizontal, 16)
+            }
             Grid(items: viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
                     viewModel.choose(card: card)

@@ -23,6 +23,10 @@ class GoofyMemoryGame: ObservableObject {
         model.cards
     }
 
+    var score: Int {
+        model.score
+    }
+
     func choose(card: StringMemoryGame.Card) {
         model.choose(card: card)
     }

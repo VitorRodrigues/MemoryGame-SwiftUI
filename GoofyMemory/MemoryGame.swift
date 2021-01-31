@@ -10,7 +10,11 @@ import Combine
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
 
+    let matchScorePoint = 10
+    let unmatchScorePoint = -1
+
     var cards: [Card]
+    var score = 0
 
     var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
@@ -28,6 +32,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             [Card(content: content(index), id: index*2),
             Card(content: content(index), id: index*2+1)]
         }
+        cards.shuffle()
     }
 
     // MARK: - Intents
@@ -39,7 +44,11 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
             if cards[potentialMatchIndex].content == cards[cardIndex].content {
                 cards[potentialMatchIndex].isMatched = true
                 cards[cardIndex].isMatched = true
+                score += matchScorePoint
+            } else {
+                score += unmatchScorePoint
             }
+            
             cards[cardIndex].isFaceUp = true
         } else {
             indexOfOneAndOnlyFaceUpCard = cardIndex
