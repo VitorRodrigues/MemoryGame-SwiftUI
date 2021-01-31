@@ -11,7 +11,7 @@ import SwiftUI
 struct GoofyMemoryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: GameFactory.createMemoryGame())
+            GameView(viewModel: GameFactory.createMemoryGame())
         }
     }
 }

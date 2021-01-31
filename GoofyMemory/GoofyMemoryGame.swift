@@ -12,14 +12,11 @@ typealias StringMemoryGame = MemoryGame<String>
 class GoofyMemoryGame: ObservableObject {
 
     var theme: Theme
-    @Published var model: StringMemoryGame
+    @Published var model: StringMemoryGame!
 
     init(theme: Theme) {
         self.theme = theme
-        let content = theme.content
-        model = MemoryGame(pairCount: content.count) { (index) -> String in
-            return content[index]
-        }
+        self.makeGame()
     }
 
     var cards: [StringMemoryGame.Card] {
@@ -28,5 +25,17 @@ class GoofyMemoryGame: ObservableObject {
 
     func choose(card: StringMemoryGame.Card) {
         model.choose(card: card)
+    }
+
+    func newGame() {
+        self.theme = ThemeFactory.randomBuild()
+        self.makeGame()
+    }
+
+    private func makeGame() {
+        let content = theme.content
+        model = MemoryGame(pairCount: content.count) { (index) -> String in
+            return content[index]
+        }
     }
 }
