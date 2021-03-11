@@ -13,4 +13,7 @@ class GameFactory {
         GoofyMemoryGame(theme: ThemeFactory.randomBuild())
     }
 
+    static func createMemoryGame(theme: ThemeFactory.ThemeOption) -> GoofyMemoryGame {
+        GoofyMemoryGame(theme: ThemeFactory.build(theme: theme))
+    }
 }

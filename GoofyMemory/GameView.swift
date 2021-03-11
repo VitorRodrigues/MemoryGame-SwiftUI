@@ -22,7 +22,9 @@ struct GameView: View {
             }
             Grid(items: viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
-                    viewModel.choose(card: card)
+                    withAnimation(.linear) {
+                        viewModel.choose(card: card)
+                    }
                 }
                 .padding(4)
             }
@@ -30,7 +32,9 @@ struct GameView: View {
             .foregroundColor(.init(viewModel.theme.cardColor))
             .font(.largeTitle)
             Button(action: {
-                viewModel.newGame()
+                withAnimation(.easeInOut) {
+                    viewModel.newGame()
+                }
             }, label: {
                 Text("New Game")
             })
@@ -42,27 +46,55 @@ struct CardView: View {
     var card: StringMemoryGame.Card
 
     var body: some View {
-        ZStack {
-            if card.isFaceUp {
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke()
-                    .transition(.opacity)
-                Text(card.content)
-                    .foregroundColor(.black)
-                    .transition(.scale)
-            } else {
-                if !card.isMatched {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill()
-                    .transition(.identity)
-                }
-            }
+        GeometryReader { geometry in
+            self.body(for: geometry.size)
         }
+    }
+
+    @State var animatedBonusRemaining: Double = 0
+    
+    private func startBonusTimeAnimation() {
+        animatedBonusRemaining = card.bonusRemaining
+        withAnimation(.linear(duration: card.bonusTimeRemaining)) {
+            animatedBonusRemaining = 0
+        }
+    }
+    
+    @ViewBuilder
+    private func body(for size: CGSize) -> some View {
+        if card.isFaceUp || !card.isMatched {
+            ZStack {
+                Group {
+                    if card.isConsumingBonusTime {
+                        Pie(startAngle: .degrees(0-90), endAngle: .degrees(-animatedBonusRemaining*360-90), clockwise: true)
+                    } else {
+                        Pie(startAngle: .degrees(0-90), endAngle: .degrees(-card.bonusRemaining*360-90), clockwise: true)
+                    }
+                }
+                .padding()
+                .opacity(0.4)
+                .onAppear() {
+                    startBonusTimeAnimation()
+                }
+                Text(card.content)
+                    .font(.system(size: fontSize(for: size)))
+                    .rotationEffect(.degrees(card.isMatched ? 360 : 0))
+                    .animation(card.isMatched ? Animation.linear(duration: 1).repeatForever(autoreverses: false) : .default)
+            }
+            .cardfiy(isFaceUp: card.isFaceUp)
+            .transition(.scale)
+        }
+    }
+
+    private func fontSize(for size: CGSize) -> CGFloat {
+        min(size.width, size.height) * 0.75
     }
 }
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView(viewModel: GameFactory.createMemoryGame())
+        let game = GameFactory.createMemoryGame(theme: .halloween)
+        game.choose(card: game.cards[0])
+        return GameView(viewModel: game)
     }
 }

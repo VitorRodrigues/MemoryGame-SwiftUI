@@ -9,9 +9,13 @@ import SwiftUI
 
 struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
 
-    var items: [Item]
-    var itemView: (Item) -> ItemView
+    private var items: [Item]
+    private var itemView: (Item) -> ItemView
 
+    init(items: [Item], itemView: @escaping ((Item) -> ItemView)) {
+        self.items = items
+        self.itemView = itemView
+    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -19,13 +23,13 @@ struct Grid<Item, ItemView>: View where Item: Identifiable, ItemView: View {
         }
     }
 
-    func createBody(in layout: GridLayout) -> some View {
+    private func createBody(in layout: GridLayout) -> some View {
         ForEach(items) { item in
             itemBody(for: item, in: layout)
         }
     }
 
-    func itemBody(for item: Item, in layout: GridLayout) -> some View {
+    private func itemBody(for item: Item, in layout: GridLayout) -> some View {
         let itemIndex = indexOf(item)
         return itemView(item)
             .frame(width: layout.itemSize.width, height: layout.itemSize.height)

@@ -10,6 +10,8 @@
 		A96C2DAD25C72E9B006AF042 /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C2DAC25C72E9B006AF042 /* Array+Only.swift */; };
 		A96C2DB025C7331B006AF042 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C2DAF25C7331B006AF042 /* Theme.swift */; };
 		A96C2DB425C73967006AF042 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C2DB325C73967006AF042 /* ContentView.swift */; };
+		A96C2DB825C75E0F006AF042 /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C2DB725C75E0F006AF042 /* Pie.swift */; };
+		A97171CB25C8B660007C2D79 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97171CA25C8B660007C2D79 /* Cardify.swift */; };
 		A97A2E21259CF6EF00AA6DD6 /* GoofyMemoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97A2E20259CF6EF00AA6DD6 /* GoofyMemoryApp.swift */; };
 		A97A2E23259CF6EF00AA6DD6 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97A2E22259CF6EF00AA6DD6 /* GameView.swift */; };
 		A97A2E25259CF6F000AA6DD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A97A2E24259CF6F000AA6DD6 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 		A96C2DAC25C72E9B006AF042 /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
 		A96C2DAF25C7331B006AF042 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		A96C2DB325C73967006AF042 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A96C2DB725C75E0F006AF042 /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
+		A97171CA25C8B660007C2D79 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		A97A2E1D259CF6EE00AA6DD6 /* GoofyMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoofyMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97A2E20259CF6EF00AA6DD6 /* GoofyMemoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoofyMemoryApp.swift; sourceTree = "<group>"; };
 		A97A2E22259CF6EF00AA6DD6 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -70,6 +74,10 @@
 		A97A2E1F259CF6EF00AA6DD6 /* GoofyMemory */ = {
 			isa = PBXGroup;
 			children = (
+				A98102B625A3367D00943FB4 /* Array+Identifiable.swift */,
+				A96C2DAC25C72E9B006AF042 /* Array+Only.swift */,
+				A97171CA25C8B660007C2D79 /* Cardify.swift */,
+				A96C2DB325C73967006AF042 /* ContentView.swift */,
 				A97A2E20259CF6EF00AA6DD6 /* GoofyMemoryApp.swift */,
 				A97A2E22259CF6EF00AA6DD6 /* GameView.swift */,
 				A9F6E705259D090B00415017 /* GridLayout.swift */,
@@ -77,13 +85,11 @@
 				A9F6E701259D001200415017 /* MemoryGame.swift */,
 				A9F6E70B259D1C5800415017 /* GoofyMemoryGame.swift */,
 				A9F6E708259D0B0100415017 /* GameFactory.swift */,
+				A96C2DB725C75E0F006AF042 /* Pie.swift */,
 				A97A2E24259CF6F000AA6DD6 /* Assets.xcassets */,
 				A97A2E29259CF6F000AA6DD6 /* Info.plist */,
 				A97A2E26259CF6F000AA6DD6 /* Preview Content */,
-				A98102B625A3367D00943FB4 /* Array+Identifiable.swift */,
-				A96C2DAC25C72E9B006AF042 /* Array+Only.swift */,
 				A96C2DAF25C7331B006AF042 /* Theme.swift */,
-				A96C2DB325C73967006AF042 /* ContentView.swift */,
 			);
 			path = GoofyMemory;
 			sourceTree = "<group>";
@@ -171,6 +177,8 @@
 				A97A2E23259CF6EF00AA6DD6 /* GameView.swift in Sources */,
 				A96C2DAD25C72E9B006AF042 /* Array+Only.swift in Sources */,
 				A9F6E70C259D1C5800415017 /* GoofyMemoryGame.swift in Sources */,
+				A97171CB25C8B660007C2D79 /* Cardify.swift in Sources */,
+				A96C2DB825C75E0F006AF042 /* Pie.swift in Sources */,
 				A97A2E21259CF6EF00AA6DD6 /* GoofyMemoryApp.swift in Sources */,
 				A98102B725A3367D00943FB4 /* Array+Identifiable.swift in Sources */,
 				A96C2DB025C7331B006AF042 /* Theme.swift in Sources */,
